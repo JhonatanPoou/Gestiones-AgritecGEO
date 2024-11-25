@@ -37,7 +37,8 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: normal;
+            padding: 0.5rem;
         }
 
         nav ul li:hover .dropdown {
@@ -68,8 +69,19 @@
             background-color: #f1f1f1;
         }
 
-        .content {
-            padding: 2rem;
+        /* Submenú */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .dropdown li:hover .submenu {
+            display: block;
         }
     </style>
 </head>
@@ -84,20 +96,30 @@
                 <li>
                     <a href="#gestion-servicios">Gestión de Servicios</a>
                     <div class="dropdown">
-                        <a href="#software-administracion">Software de Administración de Fincas</a>
-                        <a href="#erp">ERP</a>
-                        <a href="#planilla-agricola">Planilla Agrícola</a>
-                        <a href="#collector">Collector</a>
-                        <a href="#modulo-transformacion">Módulo de Transformación</a>
-                        <a href="#hardware-services">Hardware as a Services</a>
+                        <ul>
+                            <li>
+                                <a href="#software-administracion">Software de Administración de Fincas</a>
+                                <div class="submenu">
+                                    <a href="#activacion-servicios">Activación de servicios e implementación</a>
+                                    <a href="#requerimientos-desarrollo">Requerimientos de desarrollo</a>
+                                    <a href="#ticket-soporte">Ticket de soporte</a>
+                                </div>
+                            </li>
+                            <li><a href="#erp">ERP</a></li>
+                            <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
+                            <li><a href="#collector">Collector</a></li>
+                            <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
+                            <li><a href="#hardware-services">Hardware as a Services</a></li>
+                        </ul>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
+
     <div class="content">
-        <h2>Bienvenido a la página de gestión</h2>
-        <p>Selecciona una de las opciones del menú para obtener más información sobre nuestros servicios.</p>
+        <h2>Bienvenido a la Gestión de Servicios</h2>
+        <p>Selecciona una opción del menú para continuar.</p>
     </div>
 </body>
 </html>
