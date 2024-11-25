@@ -37,7 +37,6 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: normal;
             padding: 0.5rem;
         }
 
@@ -55,6 +54,7 @@
             z-index: 1000;
             border-radius: 5px;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         .dropdown a {
@@ -69,7 +69,7 @@
             background-color: #f1f1f1;
         }
 
-        /* Submenú */
+        /* Submenú con adaptación */
         .submenu {
             display: none;
             position: absolute;
@@ -82,6 +82,20 @@
 
         .dropdown li:hover .submenu {
             display: block;
+        }
+
+        .submenu {
+            right: auto;
+        }
+
+        /* Prevenir que el submenú se salga de la pantalla */
+        .dropdown:hover .submenu {
+            left: 100%;
+        }
+
+        .submenu-adjust {
+            left: auto;
+            right: 100%;
         }
     </style>
 </head>
@@ -96,30 +110,24 @@
                 <li>
                     <a href="#gestion-servicios">Gestión de Servicios</a>
                     <div class="dropdown">
-                        <ul>
-                            <li>
-                                <a href="#software-administracion">Software de Administración de Fincas</a>
-                                <div class="submenu">
-                                    <a href="#activacion-servicios">Activación de servicios e implementación</a>
-                                    <a href="#requerimientos-desarrollo">Requerimientos de desarrollo</a>
-                                    <a href="#ticket-soporte">Ticket de soporte</a>
-                                </div>
-                            </li>
-                            <li><a href="#erp">ERP</a></li>
-                            <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
-                            <li><a href="#collector">Collector</a></li>
-                            <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
-                            <li><a href="#hardware-services">Hardware as a Services</a></li>
+                        <a href="#software-administracion">Software de Administración de Fincas</a>
+                        <ul class="submenu submenu-adjust">
+                            <li><a href="#activacion-servicios">Activación de Servicios e Implementación</a></li>
+                            <li><a href="#requerimientos-desarrollo">Requerimientos de Desarrollo</a></li>
+                            <li><a href="#ticket-soporte">Ticket de Soporte</a></li>
                         </ul>
+                        <a href="#erp">ERP</a>
+                        <a href="#planilla-agricola">Planilla Agrícola</a>
+                        <a href="#collector">Collector</a>
+                        <a href="#modulo-transformacion">Módulo de Transformación</a>
+                        <a href="#hardware">Hardware as a Services</a>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
-
-    <div class="content">
-        <h2>Bienvenido a la Gestión de Servicios</h2>
-        <p>Selecciona una opción del menú para continuar.</p>
-    </div>
+    <main class="content">
+        <p>Bienvenido a nuestra página de gestión de servicios. Selecciona una opción en el menú para más información.</p>
+    </main>
 </body>
 </html>
