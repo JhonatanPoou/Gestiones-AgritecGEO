@@ -70,7 +70,7 @@
             display: block;
         }
 
-        /* Submenú que se despliega hacia la derecha */
+        /* Submenú a la derecha de "Software de Administración de Fincas" */
         .submenu {
             display: none;
             position: absolute;
@@ -84,6 +84,22 @@
         .dropdown li:hover > .submenu {
             display: block;
         }
+
+        /* Responsividad para que el submenú no se salga de la pantalla */
+        .submenu {
+            left: 100%;
+        }
+
+        /* Si el submenú se encuentra cerca del borde de la pantalla, lo mueve hacia la izquierda */
+        nav ul li:hover > .submenu {
+            left: auto;
+            right: 0;
+        }
+
+        /* Asegurando que las opciones del menú no se solapen */
+        nav ul {
+            flex-direction: row;
+        }
     </style>
 </head>
 <body>
@@ -91,12 +107,13 @@
         <h1>Gestión de Servicios</h1>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
                 <li>
                     <a href="#gestion-servicios">Gestión de Servicios</a>
                     <ul class="dropdown">
-                        <li>
-                            <a href="#software-administracion">Software de Administración de Fincas</a>
+                        <li><a href="#software-administracion">Software de Administración de Fincas</a>
                             <ul class="submenu">
                                 <li><a href="#activacion-servicios">Activación de Servicios</a></li>
                                 <li><a href="#requerimientos-desarrollo">Requerimientos de Desarrollo</a></li>
@@ -107,7 +124,7 @@
                         <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
                         <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
                         <li><a href="#collector">Collector</a></li>
-                        <li><a href="#hardware-services">Hardware as a Service</a></li>
+                        <li><a href="#hardware-services">Hardware as a Services</a></li>
                     </ul>
                 </li>
             </ul>
