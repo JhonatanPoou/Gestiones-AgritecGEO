@@ -17,7 +17,7 @@
             color: white;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centra el menú */
             align-items: center;
         }
 
@@ -26,11 +26,12 @@
             margin: 0;
             padding: 0;
             display: flex;
+            justify-content: center; /* Centra las opciones */
         }
 
         nav ul li {
             position: relative;
-            margin: 0 1rem;
+            margin: 0 2rem; /* Espaciado entre opciones */
         }
 
         nav ul li a {
@@ -44,15 +45,18 @@
             background-color: #45a049;
         }
 
+        /* Submenú */
         .dropdown {
             display: none;
             position: absolute;
             top: 100%;
-            left: 0;
+            left: 50%; /* Alinea el submenú en el centro de la opción principal */
+            transform: translateX(-50%); /* Asegura que se centre correctamente */
             background-color: white;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             z-index: 1000;
+            width: 200px; /* Define un ancho para el submenú */
         }
 
         .dropdown a {
@@ -70,35 +74,25 @@
             display: block;
         }
 
-        /* Submenú a la derecha de "Software de Administración de Fincas" */
+        /* Estilo para las opciones del submenú */
+        .submenu a {
+            padding: 0.5rem 1rem;
+        }
+
         .submenu {
             display: none;
             position: absolute;
             top: 0;
-            left: 100%;
+            left: 100%; /* Despliega hacia la derecha */
             background-color: white;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
+            z-index: 1000;
+            min-width: 200px;
         }
 
         .dropdown li:hover > .submenu {
             display: block;
-        }
-
-        /* Responsividad para que el submenú no se salga de la pantalla */
-        .submenu {
-            left: 100%;
-        }
-
-        /* Si el submenú se encuentra cerca del borde de la pantalla, lo mueve hacia la izquierda */
-        nav ul li:hover > .submenu {
-            left: auto;
-            right: 0;
-        }
-
-        /* Asegurando que las opciones del menú no se solapen */
-        nav ul {
-            flex-direction: row;
         }
     </style>
 </head>
@@ -107,15 +101,13 @@
         <h1>Gestión de Servicios</h1>
         <nav>
             <ul>
-                <li>
-                    <a href="#inicio">Inicio</a>
-                </li>
+                <li><a href="#inicio">Inicio</a></li>
                 <li>
                     <a href="#gestion-servicios">Gestión de Servicios</a>
                     <ul class="dropdown">
                         <li><a href="#software-administracion">Software de Administración de Fincas</a>
                             <ul class="submenu">
-                                <li><a href="#activacion-servicios">Activación de Servicios</a></li>
+                                <li><a href="#activacion-servicios">Activación de Servicios e Implementación</a></li>
                                 <li><a href="#requerimientos-desarrollo">Requerimientos de Desarrollo</a></li>
                                 <li><a href="#ticket-soporte">Ticket de Soporte</a></li>
                             </ul>
@@ -124,7 +116,7 @@
                         <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
                         <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
                         <li><a href="#collector">Collector</a></li>
-                        <li><a href="#hardware-services">Hardware as a Services</a></li>
+                        <li><a href="#hardware-services">Hardware as a Service</a></li>
                     </ul>
                 </li>
             </ul>
