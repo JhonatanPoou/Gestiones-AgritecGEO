@@ -3,148 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Página de Gestión</title>
     <style>
+        /* Estilos básicos */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
         }
+
         header {
-            background-color: #0078d7;
+            background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .login {
-            background-color: white;
-            color: #0078d7;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .login:hover {
-            background-color: #005bb5;
-            color: white;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            margin: 20px 0;
-        }
-    </style>
-</head>
-<body><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido al Gestor de Servicios AgritecGEO®</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+
+        nav ul {
+            list-style: none;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-        }
-        header {
-            background-color: #0078d7;
-            color: white;
-            padding: 10px 20px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
         }
-        nav {
-            display: flex;
-            gap: 15px;
+
+        nav ul li {
+            position: relative;
+            margin: 0 1rem;
         }
-        nav a {
+
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
-        nav a:hover {
-            text-decoration: underline;
+
+        nav ul li:hover .dropdown {
+            display: block;
         }
-        .login {
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
             background-color: white;
-            color: #0078d7;
-            border: none;
-            padding: 5px 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
             border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
+            overflow: hidden;
         }
-        .login:hover {
-            background-color: #005bb5;
-            color: white;
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
-        main {
-            padding: 20px;
-            text-align: center;
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
         }
-        section {
-            margin: 20px 0;
+
+        .content {
+            padding: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Gestor de Servicios AgritecGEO®</h1>
+        <h1>Gestión de Servicios</h1>
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#quienes-somos">Quiénes somos</a>
-            <a href="#contacto">Contacto</a>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <a href="#gestion-servicios">Gestión de Servicios</a>
+                    <div class="dropdown">
+                        <a href="#software-administracion">Software de Administración de Fincas</a>
+                        <a href="#erp">ERP</a>
+                        <a href="#planilla-agricola">Planilla Agrícola</a>
+                        <a href="#collector">Collector</a>
+                        <a href="#modulo-transformacion">Módulo de Transformación</a>
+                        <a href="#hardware-services">Hardware as a Services</a>
+                    </div>
+                </li>
+            </ul>
         </nav>
-        <button class="login" onclick="iniciarSesion()">Iniciar Sesión</button>
     </header>
-    <main>
-        <section id="inicio">
-            <h2>Bienvenido a nuestra página</h2>
-            <p>Este es el inicio de nuestra página web. Explora nuestras opciones en el menú superior.</p>
-        </section>
-        <section id="quienes-somos">
-            <h2>Quiénes somos</h2>
-            <p>Somos una empresa dedicada a ofrecer las mejores soluciones para tus necesidades.</p>
-        </section>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Escríbenos a: contacto@ejemplo.com</p>
-            <p>Teléfono: +123 456 7890</p>
-        </section>
-    </main>
-    <script>
-        function iniciarSesion() {
-            let usuario = prompt("Ingrese su usuario:");
-            let contraseña = prompt("Ingrese su contraseña:");
-            if (usuario && contraseña) {
-                alert(`Bienvenido, ${usuario}!`);
-            } else {
-                alert("Usuario o contraseña inválidos.");
-            }
-        }
-    </script>
+    <div class="content">
+        <h2>Bienvenido a la página de gestión</h2>
+        <p>Selecciona una de las opciones del menú para obtener más información sobre nuestros servicios.</p>
+    </div>
 </body>
 </html>
-
- 
