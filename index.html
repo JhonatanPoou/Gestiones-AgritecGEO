@@ -26,12 +26,11 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
         }
 
         nav ul li {
             position: relative;
-            margin: 0;
+            margin: 0 1rem;
         }
 
         nav ul li a {
@@ -39,7 +38,6 @@
             text-decoration: none;
             padding: 0.5rem 1rem;
             display: block;
-            background-color: #4CAF50;
         }
 
         nav ul li a:hover {
@@ -48,27 +46,43 @@
 
         .dropdown {
             display: none;
-            flex-direction: column;
-        }
-
-        nav ul li:hover .dropdown {
-            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
         }
 
         .dropdown a {
-            background-color: #ffffff;
             color: #333;
+            text-decoration: none;
             padding: 0.5rem 1rem;
-            border-top: 1px solid #ddd;
+            display: block;
         }
 
         .dropdown a:hover {
             background-color: #f1f1f1;
         }
 
-        /* Estilo para alinear correctamente las demás opciones */
-        .dropdown li {
-            margin: 0;
+        nav ul li:hover > .dropdown {
+            display: block;
+        }
+
+        /* Submenú que se despliega hacia la derecha */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .dropdown li:hover > .submenu {
+            display: block;
         }
     </style>
 </head>
@@ -77,42 +91,22 @@
         <h1>Gestión de Servicios</h1>
         <nav>
             <ul>
+                <li><a href="#inicio">Inicio</a></li>
                 <li>
-                    <a href="#inicio">Inicio</a>
-                </li>
-                <li>
-                    <a href="#quienes-somos">Quiénes Somos</a>
-                </li>
-                <li>
-                    <a href="#contacto">Contacto</a>
-                </li>
-                <li>
-                    <a href="#gestion-servicios">Gestión de Servicios</a>
-                    <ul class="dropdown">
-                        <li><a href="#software-administracion">Software de Administración de Fincas</a></li>
-                        <li><a href="#erp">ERP</a></li>
-                        <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
-                        <li><a href="#collector">Collector</a></li>
-                        <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
-                        <li><a href="#hardware-services">Hardware as a Service</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#software-admin">Software de Administración de Fincas</
                     <a href="#gestion-servicios">Gestión de Servicios</a>
                     <ul class="dropdown">
                         <li>
                             <a href="#software-administracion">Software de Administración de Fincas</a>
-                            <ul class="dropdown">
-                                <li><a href="#activacion-servicios">Activación de Servicios e Implementación</a></li>
+                            <ul class="submenu">
+                                <li><a href="#activacion-servicios">Activación de Servicios</a></li>
                                 <li><a href="#requerimientos-desarrollo">Requerimientos de Desarrollo</a></li>
                                 <li><a href="#ticket-soporte">Ticket de Soporte</a></li>
                             </ul>
                         </li>
                         <li><a href="#erp">ERP</a></li>
                         <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
-                        <li><a href="#collector">Collector</a></li>
                         <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
+                        <li><a href="#collector">Collector</a></li>
                         <li><a href="#hardware-services">Hardware as a Service</a></li>
                     </ul>
                 </li>
