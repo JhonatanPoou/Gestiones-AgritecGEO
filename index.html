@@ -26,76 +26,49 @@
             margin: 0;
             padding: 0;
             display: flex;
-            align-items: center;
+            flex-direction: column;
         }
 
         nav ul li {
             position: relative;
-            margin: 0 1rem;
+            margin: 0;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 0.5rem;
+            padding: 0.5rem 1rem;
+            display: block;
+            background-color: #4CAF50;
         }
 
-        nav ul li:hover .dropdown {
-            display: block;
+        nav ul li a:hover {
+            background-color: #45a049;
         }
 
         .dropdown {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            border-radius: 5px;
-            overflow: hidden;
-            white-space: nowrap;
+            flex-direction: column;
+        }
+
+        nav ul li:hover .dropdown {
+            display: flex;
         }
 
         .dropdown a {
-            display: block;
-            padding: 0.5rem 1rem;
+            background-color: #ffffff;
             color: #333;
-            text-decoration: none;
-            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #ddd;
         }
 
         .dropdown a:hover {
             background-color: #f1f1f1;
         }
 
-        /* Submenú con adaptación */
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        .dropdown li:hover .submenu {
-            display: block;
-        }
-
-        .submenu {
-            right: auto;
-        }
-
-        /* Prevenir que el submenú se salga de la pantalla */
-        .dropdown:hover .submenu {
-            left: 100%;
-        }
-
-        .submenu-adjust {
-            left: auto;
-            right: 100%;
+        /* Estilo para alinear correctamente las demás opciones */
+        .dropdown li {
+            margin: 0;
         }
     </style>
 </head>
@@ -104,30 +77,51 @@
         <h1>Gestión de Servicios</h1>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+                <li>
+                    <a href="#quienes-somos">Quiénes Somos</a>
+                </li>
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
                 <li>
                     <a href="#gestion-servicios">Gestión de Servicios</a>
-                    <div class="dropdown">
-                        <a href="#software-administracion">Software de Administración de Fincas</a>
-                        <ul class="submenu submenu-adjust">
-                            <li><a href="#activacion-servicios">Activación de Servicios e Implementación</a></li>
-                            <li><a href="#requerimientos-desarrollo">Requerimientos de Desarrollo</a></li>
-                            <li><a href="#ticket-soporte">Ticket de Soporte</a></li>
-                        </ul>
-                        <a href="#erp">ERP</a>
-                        <a href="#planilla-agricola">Planilla Agrícola</a>
-                        <a href="#collector">Collector</a>
-                        <a href="#modulo-transformacion">Módulo de Transformación</a>
-                        <a href="#hardware">Hardware as a Services</a>
-                    </div>
+                    <ul class="dropdown">
+                        <li><a href="#software-administracion">Software de Administración de Fincas</a></li>
+                        <li><a href="#erp">ERP</a></li>
+                        <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
+                        <li><a href="#collector">Collector</a></li>
+                        <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
+                        <li><a href="#hardware-services">Hardware as a Service</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#software-admin">Software de Administración de Fincas</
+                    <a href="#gestion-servicios">Gestión de Servicios</a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#software-administracion">Software de Administración de Fincas</a>
+                            <ul class="dropdown">
+                                <li><a href="#activacion-servicios">Activación de Servicios e Implementación</a></li>
+                                <li><a href="#requerimientos-desarrollo">Requerimientos de Desarrollo</a></li>
+                                <li><a href="#ticket-soporte">Ticket de Soporte</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#erp">ERP</a></li>
+                        <li><a href="#planilla-agricola">Planilla Agrícola</a></li>
+                        <li><a href="#collector">Collector</a></li>
+                        <li><a href="#modulo-transformacion">Módulo de Transformación</a></li>
+                        <li><a href="#hardware-services">Hardware as a Service</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="content">
-        <p>Bienvenido a nuestra página de gestión de servicios. Selecciona una opción en el menú para más información.</p>
-    </main>
+    <div class="content">
+        <h2>Bienvenido a nuestra página</h2>
+        <p>Aquí puedes explorar nuestros servicios y conocer más sobre nuestra empresa.</p>
+    </div>
 </body>
 </html>
