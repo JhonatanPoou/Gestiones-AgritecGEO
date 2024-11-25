@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .login {
+            background-color: white;
+            color: #0078d7;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .login:hover {
+            background-color: #005bb5;
+            color: white;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .login {
+            background-color: white;
+            color: #0078d7;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .login:hover {
+            background-color: #005bb5;
+            color: white;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Página Web</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">Quiénes somos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <button class="login" onclick="iniciarSesion()">Iniciar Sesión</button>
+    </header>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a nuestra página</h2>
+            <p>Este es el inicio de nuestra página web. Explora nuestras opciones en el menú superior.</p>
+        </section>
+        <section id="quienes-somos">
+            <h2>Quiénes somos</h2>
+            <p>Somos una empresa dedicada a ofrecer las mejores soluciones para tus necesidades.</p>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Escríbenos a: contacto@ejemplo.com</p>
+            <p>Teléfono: +123 456 7890</p>
+        </section>
+    </main>
+    <script>
+        function iniciarSesion() {
+            let usuario = prompt("Ingrese su usuario:");
+            let contraseña = prompt("Ingrese su contraseña:");
+            if (usuario && contraseña) {
+                alert(`Bienvenido, ${usuario}!`);
+            } else {
+                alert("Usuario o contraseña inválidos.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 
